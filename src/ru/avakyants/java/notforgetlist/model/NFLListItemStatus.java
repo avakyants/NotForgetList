@@ -6,13 +6,13 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum ListItemStatus {
+public enum NFLListItemStatus {
 
 	ACTIVE(1), COMPLETED(2), REJECTED(3), PENDING(4), EXPECTED(5);
 	
 	int value;
 	
-	ListItemStatus(int value) {
+	NFLListItemStatus(int value) {
 		this.value = value;
 	}
 	
@@ -20,16 +20,16 @@ public enum ListItemStatus {
 		return this.value;
 	}
 	
-	private static Map<Integer, ListItemStatus> map = new HashMap<>();
+	private static Map<Integer, NFLListItemStatus> map = new HashMap<>();
 
     static {
-        for (ListItemStatus status : ListItemStatus.values()) {
+        for (NFLListItemStatus status : NFLListItemStatus.values()) {
             map.put(status.value, status);
         }
     }
 	
 	@JsonCreator
-    public static ListItemStatus forValue(int value) {
+    public static NFLListItemStatus forValue(int value) {
         return map.get(value);
     }
 

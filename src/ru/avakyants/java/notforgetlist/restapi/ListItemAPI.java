@@ -12,8 +12,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.UriInfo;
 
-import ru.avakyants.java.notforgetlist.model.ListItem;
-import ru.avakyants.java.notforgetlist.model.ListItemStatus;
+import ru.avakyants.java.notforgetlist.model.NFLListItem;
+import ru.avakyants.java.notforgetlist.model.NFLListItemStatus;
 
 
 @Path("/{listid}/items")
@@ -28,7 +28,7 @@ public class ListItemAPI {
 	 * */
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<ListItem> sayPlainTextHello(@PathParam("listid") long listId, @QueryParam("key") String key, @Context UriInfo uriInfo){
+	public List<NFLListItem> sayPlainTextHello(@PathParam("listid") long listId, @QueryParam("key") String key, @Context UriInfo uriInfo){
 		
 		System.out.println("KEY is: "+key);
 		//MultivaluedMap<String, String> queryParams = uriInfo.getQueryParameters();
@@ -36,11 +36,11 @@ public class ListItemAPI {
 		keys.forEach(System.out::println);
 		//.forEach((k,v)->System.out.println(k+":"+v));
 		
-		ListItem i1 = new ListItem(1L,listId,"Item 1");
-		ListItem i2 = new ListItem(2L,listId,"Item 2",ListItemStatus.COMPLETED);
-		ListItem i3 = new ListItem(3L,listId,"Item 3");
-		ListItem i4 = new ListItem(4L,listId,"Item 4",ListItemStatus.EXPECTED);
-		ListItem i5 = new ListItem(5L,listId,"Item 5");
+		NFLListItem i1 = new NFLListItem(1L,listId,"Item 1");
+		NFLListItem i2 = new NFLListItem(2L,listId,"Item 2",NFLListItemStatus.COMPLETED);
+		NFLListItem i3 = new NFLListItem(3L,listId,"Item 3");
+		NFLListItem i4 = new NFLListItem(4L,listId,"Item 4",NFLListItemStatus.EXPECTED);
+		NFLListItem i5 = new NFLListItem(5L,listId,"Item 5");
 		
 		return List.of(i1,i2,i3,i4,i5);		
 		

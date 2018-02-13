@@ -1,21 +1,21 @@
 package ru.avakyants.java.notforgetlist.model;
 
-public class ListItem {
+public class NFLListItem {
 	
 	private long id;
 	private long listId;
 	private String text;
-	private ListItemStatus status = ListItemStatus.ACTIVE;
+	private NFLListItemStatus status = NFLListItemStatus.ACTIVE;
 	
-	public ListItem(long listId,String text) {
+	public NFLListItem(long listId,String text) {
 		this(0L,listId,text);
 	}
 	
-	public ListItem(long id, long listId, String text) {
-		this(id,listId,text,ListItemStatus.ACTIVE);
+	public NFLListItem(long id, long listId, String text) {
+		this(id,listId,text,NFLListItemStatus.ACTIVE);
 	}
 	
-	public ListItem(long id, long listId, String text, ListItemStatus status) {
+	public NFLListItem(long id, long listId, String text, NFLListItemStatus status) {
 		this.id = id;
 		this.text = text;
 		this.status = status;
@@ -35,11 +35,11 @@ public class ListItem {
 		this.text = text;
 	}
 	
-	public ListItemStatus getStatus() {
+	public NFLListItemStatus getStatus() {
 		return status;
 	}
 	
-	public void setStatus(ListItemStatus status) {
+	public void setStatus(NFLListItemStatus status) {
 		this.status = status;
 	}
 
